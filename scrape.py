@@ -93,6 +93,5 @@ while i<=285:
 
 pd.DataFrame.from_dict(my_dict).to_csv("fodbold.csv",index=False)
 
-test = "hej"
 
 
