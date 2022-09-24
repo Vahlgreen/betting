@@ -6,7 +6,7 @@ data = pd.read_csv("fodbold.csv")
 def LowBet(data):
     lowestWon = []
     for index,row in data.iterrows():
-        if (row["away_odds"]<row["home_odds"] and row["away_score"]>row["home_odds"]) or (row["away_odds"]>row["home_odds"] and row["away_score"]<row["home_odds"]):
+        if (row["away_odds"]<row["home_odds"] and row["away_score"]>row["home_score"]) or (row["away_odds"]>row["home_odds"] and row["away_score"]<row["home_score"]):
             lowestWon.append(True)
         else:
             lowestWon.append(False)
@@ -14,7 +14,7 @@ def LowBet(data):
     data["lowestWon"] = lowestWon
 
 
-    #win 62% of bets and loose 38%
+
     print(f"This strategy is winning in {data['lowestWon'].sum()/len(data)}% of the matches")
 
     profit = 0
